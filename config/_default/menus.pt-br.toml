@@ -1,0 +1,55 @@
+# -- Menu Principal --
+
+[[main]]
+  name = "Blog"
+  pageRef = "posts"
+  weight = 10
+
+[[main]]
+  name = "Categorias"
+  pageRef = "categories"
+  weight = 20
+
+[[main]]
+  name = "Tags"
+  pageRef = "tags"
+  weight = 30
+
+[[main]]
+  name = "Séries"
+  pageRef = "series"
+  weight = 40
+
+[[main]]
+  name = "Sobre"
+  pageRef = "about"
+  weight = 50
+
+[[main]]
+  identifier = "youtube"
+  pre = "youtube"
+  url = "https://www.youtube.com/@athaydelab"
+  weight = 60
+
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/xathay"
+  weight = 70
+
+# -- Menu do Rodapé --
+
+[[footer]]
+  name = "YouTube"
+  url = "https://www.youtube.com/@athaydelab"
+  weight = 10
+
+[[footer]]
+  name = "GitHub"
+  url = "https://github.com/xathay"
+  weight = 20
+
+[[footer]]
+  name = "Contato"
+  pageRef = "contact"
+  weight = 30

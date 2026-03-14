@@ -1,0 +1,23 @@
+languageCode = "pt-br"
+languageName = "Português (Brasil)"
+weight = 1
+title = "Athayde Lab"
+
+[params]
+  displayName = "Português (Brasil)"
+  isoCode = "pt-br"
+  rtl = false
+  dateFormat = "2 de January de 2006"
+  logo = "img/logo.png"
+  description = "Direito, código e software livre — onde a advocacia encontra a tecnologia."
+
+[params.author]
+  name = "Leonardo Athayde"
+  image = "img/penguin.png"
+  headline = "Advogado | Desenvolvedor | Software Livre"
+  bio = "Processualista atuante no criminal e cível. Desenvolvedor de ferramentas open source para o ecossistema Linux. Encaro a computação como coisa séria — e como diversão."
+  links = [
+    { youtube = "https://www.youtube.com/@athaydelab" },
+    { github = "https://github.com/xathay" },
+    { email = "mailto:leoathayde@gmail.com" },
+  ]

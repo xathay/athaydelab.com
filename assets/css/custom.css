@@ -1,0 +1,51 @@
+/* DM Sans as primary font */
+body,
+h1, h2, h3, h4, h5, h6,
+.prose,
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* --- 3D Card Hover Effect --- */
+.article-link--card {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.article-link--card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(249, 115, 22, 0.15);
+}
+
+/* --- Scroll Reveal handled by JS IntersectionObserver (runs once) --- */
+
+/* --- Glassmorphism on Cards --- */
+.article-link--card {
+  background: rgba(26, 39, 68, 0.6) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+}
+
+/* --- Hero Section Parallax-like depth --- */
+.homepage-bg-image {
+  transition: transform 0.3s ease-out;
+}
+
+/* --- Subtle glow on primary color elements --- */
+a:hover,
+.text-primary-600:hover {
+  text-shadow: 0 0 8px rgba(249, 115, 22, 0.4);
+}
+
+/* --- Smooth page transitions --- */
+main {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* --- Header glass effect --- */
+header {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}

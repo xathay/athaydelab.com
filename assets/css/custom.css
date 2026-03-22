@@ -49,3 +49,90 @@ header {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
+
+/* --- Newsletter Form --- */
+.newsletter-form {
+  max-width: 480px;
+  margin: 2rem auto;
+}
+
+.newsletter-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter-input-group input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  background: rgba(26, 39, 68, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: inherit;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-input-group input[type="email"]:focus {
+  outline: none;
+  border-color: rgb(249, 115, 22);
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.25);
+}
+
+.newsletter-input-group button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: rgb(249, 115, 22);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletter-input-group button:hover {
+  background: rgb(234, 88, 12);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.35);
+}
+
+.newsletter-hint {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .newsletter-input-group {
+    flex-direction: column;
+  }
+}
+
+/* --- Smooth card image transitions --- */
+.article-link--card img {
+  transition: transform 0.5s ease;
+}
+
+.article-link--card:hover img {
+  transform: scale(1.03);
+}
+
+/* --- Better focus outlines for accessibility --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgb(249, 115, 22);
+  outline-offset: 2px;
+}
+
+/* --- Selection color matching theme --- */
+::selection {
+  background: rgba(249, 115, 22, 0.3);
+  color: inherit;
+}

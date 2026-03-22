@@ -28,18 +28,18 @@ O sistema PJe (Processo Judicial Eletrônico) funciona no navegador. Qualquer na
 ## Certificados digitais
 
 ### Certificado A1
-Funciona nativamente no Linux. É um arquivo `.pfx` que pode ser importado diretamente no navegador.
+Funciona nativamente no GNU/Linux. É um arquivo `.pfx` que pode ser importado diretamente no navegador.
 
 ### Certificado A3 (token/cartão)
 Com o pacote correto instalado, tokens como SafeNet e leitoras de smartcard funcionam perfeitamente. O **BigCertificados** — uma ferramenta que desenvolvi — facilita toda essa configuração.
 
 ## Editores de documentos
 
-O **LibreOffice** evoluiu enormemente. Para a maioria dos documentos jurídicos, é mais que suficiente. E se precisar de compatibilidade total com `.docx`, o **OnlyOffice** é uma excelente alternativa.
+O **LibreOffice** evoluiu enormemente. Para a maioria dos documentos jurídicos, é mais que suficiente. Na verdade, é infinitamente superior ao Microsoft Word ou outras soluções proprietárias. E se precisar de compatibilidade total com `.docx`, o **OnlyOffice** é uma excelente alternativa.
 
 ## Segurança reforçada
 
-O Linux é inerentemente mais seguro:
+O GNU/Linux é inerentemente mais seguro:
 
 - Atualizações constantes e rápidas
 - Menos suscetível a malware
@@ -68,7 +68,7 @@ Para quem está começando:
 
 Nos próximos artigos, vou mostrar passo a passo como:
 
-1. Instalar e configurar o Linux no seu notebook
+1. Instalar e configurar o GNU/Linux no seu notebook
 2. Configurar certificados digitais
 3. Acessar todos os sistemas judiciais
 4. Montar um ambiente de trabalho completo

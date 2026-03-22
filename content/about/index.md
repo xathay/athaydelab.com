@@ -30,11 +30,11 @@ O **Athayde Lab** é onde Direito encontra código. Um espaço para:
 
 ## Projetos Open Source
 
-Ferramentas que desenvolvo para o ecossistema Linux:
+Ferramentas que desenvolvo e contribuo para o ecossistema GNU/Linux:
 
 - **BigCertificados** — Gerenciador de certificados digitais A1/A3 para advogados (GTK4/Python)
 - **Big-Shot** — Extensão GNOME Shell para capturas de tela e screencasting (GJS)
-- **big-kernel-manager** — Gerenciador de kernels e drivers Mesa para Linux (GTK4/Python)
+- **comm-improve-compatibility** — Um utilitário que permite fazer uma série de configurações para melhorar a compatibilidade do sistema e o seu funcionamento de maneira geral. 
 
 Todos disponíveis no [GitHub](https://github.com/xathay).
 

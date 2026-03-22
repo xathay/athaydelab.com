@@ -1,0 +1,22 @@
+{{/* Newsletter signup form - replace ACTION_URL when you set up Buttondown/Mailchimp */}}
+<div class="newsletter-form">
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/athaydelab"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.com/athaydelab', 'popupwindow')"
+    class="embeddable-buttondown-form"
+  >
+    <div class="newsletter-input-group">
+      <input
+        type="email"
+        name="email"
+        id="bd-email"
+        placeholder="seu@email.com"
+        required
+      />
+      <button type="submit">Inscrever-se</button>
+    </div>
+    <p class="newsletter-hint">Seus dados estão seguros. Cancele quando quiser.</p>
+  </form>
+</div>

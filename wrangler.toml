@@ -1,0 +1,15 @@
+# Cloudflare Pages deployment configuration
+# https://developers.cloudflare.com/pages/
+
+name = "athaydelab"
+compatibility_date = "2026-03-21"
+
+[build]
+command = "hugo --minify"
+cwd = "."
+
+[build.environment]
+HUGO_VERSION = "0.155.3"
+
+[site]
+bucket = "./public"

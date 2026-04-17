@@ -13,5 +13,16 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Node (caso adicione ferramentas JS)
+# Node
 node_modules/
+
+# Pagefind index (gerado pelo build)
+static/pagefind/
+public/pagefind/
+
+# Rascunhos e secretos
+Buttondown (newsletter)/
+claude-mythos-sample.md
+*.secret
+.env
+.env.local

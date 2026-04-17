@@ -1,0 +1,15 @@
+{
+  "name": "athaydelab-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Digital garden de Leonardo Athayde — Hugo + Pagefind",
+  "scripts": {
+    "build": "hugo --minify && pagefind --site public",
+    "build:dev": "hugo --minify && pagefind --site public --output-path static/pagefind",
+    "dev": "hugo server -D",
+    "reindex": "pagefind --site public --output-path static/pagefind"
+  },
+  "devDependencies": {
+    "pagefind": "^1.1.1"
+  }
+}

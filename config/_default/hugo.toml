@@ -1,11 +1,12 @@
 # -- Configuração do Site --
 # https://blowfish.page/docs/getting-started/
 
-theme = "blowfish"
+theme = "athaydelab"
 baseURL = "https://athaydelab.com"
 defaultContentLanguage = "pt-br"
 
 enableRobotsTXT = true
+enableGitInfo = true
 summaryLength = 40
 
 buildDrafts = false
@@ -22,8 +23,11 @@ enableEmoji = true
 [taxonomies]
   tag = "tags"
   category = "categories"
-  author = "authors"
+  status = "status"
   series = "series"
+
+[permalinks]
+  artigos = "/:slug/"
 
 [sitemap]
   changefreq = "weekly"
@@ -50,7 +54,7 @@ enableEmoji = true
       weight = 50
 
     [[related.indices]]
-      name = "authors"
+      name = "status"
       weight = 20
 
     [[related.indices]]

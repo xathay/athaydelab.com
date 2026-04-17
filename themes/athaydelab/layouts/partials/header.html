@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="inner">
+    <a href="{{ .Site.BaseURL }}" class="brand">
+      <img src="/images/logo.png" alt="{{ .Site.Title }}">
+      <div>
+        <div class="brand-name">
+          <span class="athayde">ATHAYDE</span> <span class="lab">LAB</span>
+        </div>
+        <div class="brand-tagline">{{ .Site.Params.tagline }}</div>
+      </div>
+    </a>
+    <nav class="main">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        {{ $isActive := or (eq $currentPage.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $currentPage.RelPermalink .URL)) }}
+        <a href="{{ .URL }}"{{ if $isActive }} class="active"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+      <button id="search-toggle" class="nav-search" aria-label="Buscar" title="Buscar (Ctrl+K)">⌕</button>
+      <a href="/index.xml" class="nav-rss">RSS</a>
+    </nav>
+  </div>
+</header>

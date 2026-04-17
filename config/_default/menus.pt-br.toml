@@ -1,48 +1,21 @@
-# -- Menu Principal --
+# -- Menu principal (header) --
 
 [[main]]
-  name = "Blog"
-  pageRef = "posts"
+  name = "~/artigos"
+  url = "/"
   weight = 10
 
 [[main]]
-  name = "Categorias"
-  pageRef = "categories"
+  name = "~/projetos"
+  pageRef = "projetos"
   weight = 20
 
 [[main]]
-  name = "Tags"
-  pageRef = "tags"
+  name = "~/sobre"
+  pageRef = "sobre"
   weight = 30
 
-[[main]]
-  name = "Séries"
-  pageRef = "series"
-  weight = 40
-
-[[main]]
-  name = "Newsletter"
-  pageRef = "newsletter"
-  weight = 45
-
-[[main]]
-  name = "Sobre"
-  pageRef = "about"
-  weight = 50
-
-[[main]]
-  identifier = "youtube"
-  pre = "youtube"
-  url = "https://www.youtube.com/@athaydelab"
-  weight = 60
-
-[[main]]
-  identifier = "github"
-  pre = "github"
-  url = "https://github.com/xathay"
-  weight = 70
-
-# -- Menu do Rodapé --
+# -- Menu do rodape --
 
 [[footer]]
   name = "YouTube"
@@ -57,9 +30,9 @@
 [[footer]]
   name = "Newsletter"
   pageRef = "newsletter"
-  weight = 25
+  weight = 30
 
 [[footer]]
   name = "Contato"
   pageRef = "contact"
-  weight = 30
+  weight = 40

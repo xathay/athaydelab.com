@@ -1,0 +1,15 @@
+{{- $target := .Get 0 -}}
+{{- $slug := urlize $target -}}
+{{- $found := false -}}
+{{- range .Site.RegularPages -}}
+  {{- if eq (.Title | urlize) $slug -}}
+    {{- $found = true -}}
+    {{- $excerpt := .Summary | plainify | truncate 180 -}}
+    {{- $date := .Date.Format "02 Jan 2006" -}}
+    {{- $status := .Params.status | default "draft" -}}
+    <a href="{{ .Permalink }}" class="wikilink" data-preview-title="{{ .Title }}" data-preview-excerpt="{{ $excerpt }}" data-preview-meta="{{ $date }} · {{ $status }}">{{ $target }}</a>
+  {{- end -}}
+{{- end -}}
+{{- if not $found -}}
+  <span class="wikilink wikilink-missing" title="Pagina ainda nao existe: {{ $target }}">{{ $target }}</span>
+{{- end -}}

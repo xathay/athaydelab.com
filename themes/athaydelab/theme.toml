@@ -1,0 +1,12 @@
+name = "AthaydeLab"
+license = "MIT"
+licenselink = "https://github.com/xathay/athaydelab-theme/blob/main/LICENSE"
+description = "Digital garden theme para AthaydeLab — dark, Omarchy-style, com backlinks"
+homepage = "https://athayelab.com/"
+tags = ["digital-garden", "dark", "minimal", "blog"]
+features = ["backlinks", "wikilinks", "youtube", "mermaid"]
+min_version = "0.120.0"
+
+[author]
+  name = "Leonardo Athayde"
+  homepage = "https://athayelab.com/"

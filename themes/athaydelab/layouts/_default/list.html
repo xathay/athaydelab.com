@@ -1,0 +1,23 @@
+{{ define "main" }}
+<h1 style="font-family: var(--sans); color: var(--heading); font-size: 28px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 24px;">
+  {{ .Title }}
+</h1>
+
+<div class="article-list">
+  {{ range .Pages.ByDate.Reverse }}
+    <a href="{{ .Permalink }}" class="article-card">
+      <div class="article-meta">
+        {{ $status := .Params.status | default "draft" }}
+        <span class="article-status {{ $status }}">
+          {{ if eq $status "evergreen" }}◆ perene
+          {{ else if eq $status "budding" }}◆ crescendo
+          {{ else }}◇ draft{{ end }}
+        </span>
+        <span>{{ .Date.Format "02 Jan 2006" }}</span>
+      </div>
+      <div class="article-title">{{ .Title }}</div>
+      <div class="article-excerpt">{{ .Summary | plainify | truncate 180 }}</div>
+    </a>
+  {{ end }}
+</div>
+{{ end }}

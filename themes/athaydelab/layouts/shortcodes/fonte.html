@@ -1,0 +1,25 @@
+{{- /* Shortcode de referencia bibliografica/midiatica. Tipos: livro, artigo, tese, video, podcast. Sempre block form. Named params: tipo, url. */ -}}
+{{- $tipo := .Get "tipo" | default "livro" -}}
+{{- $url := .Get "url" -}}
+{{- $content := "" -}}
+{{- if .Inner -}}
+  {{- $content = .Inner | markdownify | strings.TrimSpace | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" -}}
+{{- else -}}
+  {{- $content = .Get 0 -}}
+{{- end -}}
+{{- if not $content -}}
+  {{- errorf "fonte shortcode: precisa de conteudo. Arquivo: %s" .Position -}}
+{{- end -}}
+{{- /* Mídia (video/podcast) = inline chip. Literatura (livro/artigo/tese/doutrina) = bloco. */ -}}
+{{- $isMedia := or (eq $tipo "video") (eq $tipo "podcast") -}}
+{{- if $isMedia -}}
+  {{- if $url -}}<a href="{{ $url }}" class="ref-link" rel="noopener">{{- end -}}
+  <span class="ref ref-{{ $tipo }}">{{ $content | safeHTML }}</span>
+  {{- if $url -}}</a>{{- end -}}
+{{- else -}}
+<div class="ref-block">
+  {{- if $url -}}<a href="{{ $url }}" class="ref-link">{{- end -}}
+  <div class="ref ref-{{ $tipo }}">{{ $content | safeHTML }}</div>
+  {{- if $url -}}</a>{{- end -}}
+</div>
+{{- end -}}

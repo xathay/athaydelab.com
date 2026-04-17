@@ -1,0 +1,59 @@
+{{ define "main" }}
+<article data-pagefind-body>
+  <a href="/" class="article-back">← voltar aos artigos</a>
+
+  <div class="article-header">
+    <div class="article-meta">
+      {{ $status := .Params.status | default "draft" }}
+      <span class="article-status {{ $status }}">
+        {{ if eq $status "evergreen" }}◆ perene
+        {{ else if eq $status "budding" }}◆ crescendo
+        {{ else }}◇ draft{{ end }}
+      </span>
+      <span title="publicado">{{ .Date.Format "02 Jan 2006" }}</span>
+      {{ if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }}
+        <span>·</span>
+        <span class="article-updated" title="ultima atualizacao">↻ {{ .Lastmod.Format "02 Jan 2006" }}</span>
+      {{ end }}
+      <span>·</span>
+      <span>{{ .ReadingTime }} min de leitura</span>
+    </div>
+
+    <h1>{{ .Title }}</h1>
+
+    <div class="article-tags">
+      {{ range .Params.tags }}
+        <a href="/tags/{{ . | urlize }}/" class="tag">#{{ . }}</a>
+      {{ end }}
+    </div>
+  </div>
+
+  {{ if .TableOfContents }}
+    <div class="toc">
+      <div class="toc-label">Sumário</div>
+      {{ .TableOfContents }}
+    </div>
+  {{ end }}
+
+  <div class="article-content">
+    {{ .Content }}
+  </div>
+
+  {{ $current := . }}
+  {{ $backlinks := slice }}
+  {{ range .Site.RegularPages }}
+    {{ if and (ne .Permalink $current.Permalink) (in .RawContent (printf "[[%s]]" $current.Title)) }}
+      {{ $backlinks = $backlinks | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $backlinks }}
+    <div class="backlinks">
+      <div class="backlinks-label">← Referenciado por</div>
+      {{ range $backlinks }}
+        <a href="{{ .Permalink }}">[[{{ .Title }}]]</a>
+      {{ end }}
+    </div>
+  {{ end }}
+</article>
+{{ end }}

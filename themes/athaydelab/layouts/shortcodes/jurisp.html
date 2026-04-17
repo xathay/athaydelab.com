@@ -1,0 +1,17 @@
+{{- /* Shortcode de citacao juridica. Tipos: jurisp, doutrina, lei, sumula. Aceita positional arg ou bloco. Params: tipo, url. Doc completa em README. */ -}}
+{{- $tipo := .Get "tipo" | default "jurisp" -}}
+{{- $url := .Get "url" -}}
+{{- $labels := dict "jurisp" "jurisp." "doutrina" "dout." "lei" "lei" "sumula" "sum." -}}
+{{- $label := index $labels $tipo | default $tipo -}}
+{{- $content := "" -}}
+{{- if .Inner -}}
+  {{- $content = .Inner | markdownify | strings.TrimSpace | strings.TrimPrefix "<p>" | strings.TrimSuffix "</p>" -}}
+{{- else -}}
+  {{- $content = .Get 0 -}}
+{{- end -}}
+{{- if not $content -}}
+  {{- errorf "jurisp shortcode: precisa de conteudo (positional ou block). Arquivo: %s" .Position -}}
+{{- end -}}
+{{- if $url -}}<a href="{{ $url }}" class="cite-link" rel="noopener">{{- end -}}
+<cite class="cite cite-{{ $tipo }}"><span class="cite-label">{{ $label }}</span> {{ $content | safeHTML }}</cite>
+{{- if $url -}}</a>{{- end -}}

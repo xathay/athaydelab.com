@@ -1,0 +1,72 @@
+<div id="search-modal" class="search-modal" aria-hidden="true">
+  <div class="search-modal-backdrop" data-search-close></div>
+  <div class="search-modal-panel" role="dialog" aria-label="Buscar no site">
+    <div class="search-modal-header">
+      <span class="search-label">buscar:</span>
+      <button type="button" class="search-close" data-search-close aria-label="Fechar">Esc</button>
+    </div>
+    <div id="pagefind-ui"></div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+(function(){
+  var modal = document.getElementById('search-modal');
+  var toggle = document.getElementById('search-toggle');
+  var uiMounted = false;
+
+  function openModal(){
+    modal.setAttribute('aria-hidden','false');
+    modal.classList.add('is-open');
+    if(!uiMounted && typeof PagefindUI !== 'undefined'){
+      new PagefindUI({
+        element: '#pagefind-ui',
+        showSubResults: true,
+        showImages: false,
+        resetStyles: false,
+        translations: {
+          placeholder: 'palavras-chave...',
+          clear_search: 'Limpar',
+          load_more: 'Carregar mais',
+          search_label: 'Buscar',
+          filters_label: 'Filtros',
+          zero_results: 'Nenhum resultado para [SEARCH_TERM]',
+          many_results: '[COUNT] resultados para [SEARCH_TERM]',
+          one_result: '1 resultado para [SEARCH_TERM]',
+          alt_search: 'Nenhum resultado para [SEARCH_TERM]. Tente [DIFFERENT_TERM]',
+          search_suggestion: 'Nenhum resultado para [SEARCH_TERM]. Sugestoes: [DIFFERENT_TERM]',
+          searching: 'Buscando [SEARCH_TERM]...'
+        }
+      });
+      uiMounted = true;
+    }
+    setTimeout(function(){
+      var input = modal.querySelector('input');
+      if(input) input.focus();
+    }, 80);
+  }
+
+  function closeModal(){
+    modal.setAttribute('aria-hidden','true');
+    modal.classList.remove('is-open');
+  }
+
+  if(toggle) toggle.addEventListener('click', openModal);
+
+  modal.querySelectorAll('[data-search-close]').forEach(function(el){
+    el.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if((e.ctrlKey || e.metaKey) && e.key === 'k'){
+      e.preventDefault();
+      openModal();
+    }
+    if(e.key === 'Escape' && modal.classList.contains('is-open')){
+      closeModal();
+    }
+  });
+})();
+</script>
